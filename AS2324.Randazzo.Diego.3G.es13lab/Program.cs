@@ -15,6 +15,16 @@ namespace AS2324.Randazzo.Diego._3G.es13lab
             int min = peso[0], max = peso[0];
             double media=0;
             Statistiche(ref peso, ref media, ref min, ref max);
+            Console.WriteLine($"la media dei pesi delle persone è {media}, il valore minimo è {min} e il valore massimo è {max}");
+            Ordina(ref peso, ref età);
+            for (int i = 0; i < età.Length; i++)
+            {
+                Console.Write(età[i]);
+            }
+            for(int j=0; j<peso.Length; j++)
+            {
+                Console.Write(peso[j]);
+            }
         }
         static void CaricaVettori(ref int [] peso, ref int [] età)
         {
@@ -43,6 +53,25 @@ namespace AS2324.Randazzo.Diego._3G.es13lab
                 conta++;
             }
             media = somma / conta;
+        }
+        static void Ordina(ref int[] peso, ref int[] età)
+        {
+            for(int i = 0; i < età.Length - 1; i++)
+            {
+                for (int j = 0; j < età.Length - i - 1; j++)
+                {
+                    if (età[j] < età[j+1])
+                    {
+                        int temp = età[j];
+                        età[j] = età[j + 1];
+                        età[j + 1] = temp;
+                        int temp2 = peso[j];
+                        peso[j] = peso[j + 1];
+                        peso[j + 1] = temp2;
+                    }
+                }
+
+            }
         }
 
     }
