@@ -19,17 +19,18 @@ namespace AS2324.Randazzo.Diego._3G.es13lab
             Ordina(ref peso, ref età);
             for (int i = 0; i < età.Length; i++)
             {
-                Console.Write(età[i]);
+                Console.Write(età[i] + "   ");
             }
-            for(int j=0; j<peso.Length; j++)
+            Console.WriteLine();
+            for (int j=0; j<peso.Length; j++)
             {
-                Console.Write(peso[j]);
+                Console.Write(peso[j] + "   ");
             }
         }
         static void CaricaVettori(ref int [] peso, ref int [] età)
         {
             Random random = new Random();
-            foreach (int i in peso)
+            for(int i=0; i<età.Length; i++)
             {
                 peso[i] = random.Next(50, 101);
                 età[i] = random.Next(18, 100);
@@ -39,7 +40,7 @@ namespace AS2324.Randazzo.Diego._3G.es13lab
         {
             int somma = 0;
             int conta = 0;
-            foreach (int i in peso)
+            for(int i = 0; i<peso.Length; i++)
             {
                 somma+= peso[i];
                 if (peso[i] > max)
